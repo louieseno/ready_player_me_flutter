@@ -20,7 +20,6 @@ class MyApp extends StatelessWidget {
       materialData: ThemeData(
           primaryColor: const Color.fromARGB(255, 20, 2, 46),
           scaffoldBackgroundColor: Colors.black87),
-      home: const ReadyPlayerMe(),
     );
   }
 }
