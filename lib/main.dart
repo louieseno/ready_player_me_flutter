@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ready_player_me_flutter/screens/ready_player_me.dart';
 import 'package:ready_player_me_flutter/widgets/platform_specific/platform_root_app.dart';
 
 void main() {

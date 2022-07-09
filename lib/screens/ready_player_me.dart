@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io' show Platform;
 import 'package:flutter/widgets.dart';
+import 'package:ready_player_me_flutter/screens/view_avatar.dart';
 import 'package:ready_player_me_flutter/utils/constants.dart';
 import 'package:ready_player_me_flutter/utils/mixins/mixin_navigator.dart';
 import 'package:ready_player_me_flutter/widgets/platform_specific/platform_scaffold.dart';
@@ -36,9 +37,11 @@ class _ReadyPlayerMeState extends State<ReadyPlayerMe> with MixinNavigator {
         },
         navigationDelegate: (NavigationRequest request) {
           if (request.url.contains('.glb')) {
-            print(request.url);
-            print('GLB DOWNLOAD');
-            routePushReplaced(context, AppRoute.readyPlayerMe.value);
+            routePushReplaced(
+              context,
+              AppRoute.viewAvatar.value,
+              ViewAvatarPageArguments(glbURL: request.url),
+            );
             return NavigationDecision.prevent;
           }
           return NavigationDecision.navigate;

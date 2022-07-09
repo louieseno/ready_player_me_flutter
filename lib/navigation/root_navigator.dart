@@ -9,11 +9,18 @@ import 'package:ready_player_me_flutter/screens/not_found.dart';
 class RouteNavigator {
   static routeHandler() {
     return (RouteSettings routeSettings) {
+      if (routeSettings.arguments != null) {
+        return {
+          AppRoute.viewAvatar.value: PlatformPageRoute.setPage(
+            ViewAvatar(
+              arguments: routeSettings.arguments as ViewAvatarPageArguments,
+            ),
+          ),
+        }[routeSettings.name];
+      }
       return {
         AppRoute.readyPlayerMe.value:
             PlatformPageRoute.setPage(const ReadyPlayerMe()),
-        AppRoute.viewAvatar.value:
-            PlatformPageRoute.setPage(const ViewAvatar()),
       }[routeSettings.name];
     };
   }
